@@ -50,7 +50,7 @@ return [
     |                    "custom", "stack"
     |
     */
-
+/*
     'channels' => [
         'stack' => [
             'driver' => 'stack',
@@ -127,5 +127,5 @@ return [
             'path' => storage_path('logs/laravel.log'),
         ],
     ],
-
+*/
 ];
