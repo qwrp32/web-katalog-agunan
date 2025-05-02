@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["php", "php81Packages.composer", "mysql", "nodejs"]
+
+[phases.build]
+cmds = ["composer install --no-dev", "php artisan config:clear", "php artisan key:generate"]
+
+[phases.start]
+cmd = "./start.sh"
