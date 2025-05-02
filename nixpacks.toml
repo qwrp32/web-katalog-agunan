@@ -1,8 +1,13 @@
 [phases.setup]
-nixPkgs = ["php", "php81Packages.composer", "mysql", "nodejs"]
+nixPkgs = ["php82", "composer", "nodejs_18", "mysql80"]
 
 [phases.build]
-cmds = ["composer install --no-dev", "php artisan config:clear", "php artisan key:generate"]
+cmds = [
+  "composer install --no-dev --optimize-autoloader",
+  "cp .env.example .env",
+  "php artisan key:generate",
+  "php artisan config:clear"
+]
 
 [phases.start]
-cmd = "./start.sh"
+cmd = "php artisan serve --host=0.0.0.0 --port=$PORT"
