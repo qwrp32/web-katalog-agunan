@@ -29,3 +29,7 @@ Route::post('/dashboard/newlisting/submit', [ListingController::class, 'postList
 Route::put('/dashboard/editListing/submit/{id}', [ListingController::class, 'editListing'])->name('listing.editListing');
 Route::delete('/dashboard/destroyListings/{id}', [ListingController::class, 'destroyListing'])->name('listing.destroy');
 Route::get('/listings/{listing}', [ListingController::class, 'itemPage'])->name('listings.item');
+Route::get('/run-migrations', function () {
+    \Artisan::call('migrate', ['--force' => true]);
+    return 'Migrations ran!';
+});
