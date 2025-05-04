@@ -14,7 +14,7 @@
         <!--a href="#" class="btn btn-primary btn-lg">Lihat Listing</a-->
       </div>
       <div class="col-md-5 text-right">
-        <img src="{{ asset('images/upper-hero.webp') }}" style="height:350px;">
+        <img src="{{ asset('images/upper-hero.webp') }}" style="height:300px;">
       </div>
     </div>
   </div>
